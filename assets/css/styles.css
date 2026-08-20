@@ -180,12 +180,14 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .fc-2 { bottom: 12%; right: -7%; }
 .fc-3 { bottom: -4%; left: 12%; }
 
-/* Trust strip */
-.trust { display: flex; flex-wrap: wrap; gap: 28px 44px; margin-top: 46px; align-items: center; }
-.trust .stat { display: flex; flex-direction: column; }
-.trust .stat b { font-size: clamp(1.6rem,3vw,2.2rem); letter-spacing: -.03em; color: var(--ink); }
-.trust .stat span { font-size: .86rem; color: var(--muted); }
-.trust .divider { width: 1px; height: 40px; background: var(--line); }
+/* Trust strip — always 3 across */
+.trust { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; align-items: center; margin-top: 46px; }
+.trust .stat { display: flex; flex-direction: column; padding: 0 clamp(14px,2.2vw,30px); }
+.trust .stat:first-child { padding-left: 0; }
+.trust .stat:not(:first-child) { border-left: 1px solid var(--line); }
+.trust .stat b { font-size: clamp(1.15rem,2.1vw,1.85rem); letter-spacing: -.03em; color: var(--ink); white-space: nowrap; }
+.trust .stat span { font-size: clamp(.74rem,1vw,.86rem); color: var(--muted); }
+.trust .divider { display: none; }
 
 /* ---------- Cards grid ---------- */
 .cards { display: grid; gap: 20px; }
@@ -382,7 +384,10 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
   .float-card { padding: 12px 14px; }
   .cards.c-2, .cards.c-3, .cards.c-4, .why-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .trust .divider { display: none; }
+  .trust { margin-top: 34px; }
+  .trust .stat { padding: 0 10px; }
+  .trust .stat b { font-size: 1.02rem; }
+  .trust .stat span { font-size: .68rem; }
   .split-media .badge { left: 10px; }
 }
 @media (max-width: 400px) { .fc-2 { display:none; } }
