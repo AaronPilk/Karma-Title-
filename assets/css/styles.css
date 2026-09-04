@@ -318,6 +318,20 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .form-ok { display:none; padding: 16px; border-radius: 14px; background: var(--purple-100); color: var(--purple); font-weight:600; text-align:center; margin-top: 14px; }
 .form-ok.show { display:block; }
 
+/* Contact reach cards (no form) */
+.reach { display: grid; gap: 14px; }
+.reach-card {
+  display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28);
+  border-radius: 18px; backdrop-filter: var(--glass); -webkit-backdrop-filter: var(--glass);
+  transition: background .3s var(--ease), transform .3s var(--ease); color: #fff;
+}
+.reach-card:hover { background: rgba(255,255,255,.22); transform: translateY(-3px); }
+.reach-ic { flex: none; width: 48px; height: 48px; border-radius: 13px; background: rgba(255,255,255,.9); display: grid; place-items: center; }
+.reach-ic svg { width: 24px; height: 24px; color: var(--purple); }
+.reach-card span { display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.75); font-weight: 600; }
+.reach-card b { display: block; font-size: clamp(1rem,1.5vw,1.15rem); letter-spacing: -.02em; color: #fff; overflow-wrap: anywhere; }
+
 /* ---------- Page hero (inner pages) ---------- */
 .page-hero { padding-top: 150px; padding-bottom: 20px; position: relative; overflow: hidden; }
 .page-hero-bg { position:absolute; inset:0; z-index:-1;
